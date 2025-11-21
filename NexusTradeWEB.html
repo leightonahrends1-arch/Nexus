@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "wkSTxoJ1-K-9MiRTf",
+      });
+   })();
+</script>
+<script src"Emailjs.js"></script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Nexus.Trade — Build Traders. Win Markets.</title>
+<meta name="description" content="Nexus.Trade — Weekly Forex & XAUUSD trade calls, trading psychology & fundamentals, private Telegram group. Join via Linktree." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#070707;
+    --panel:#0f0f10;
+    --muted:#9aa0a6;
+    --gold:#D4AF37;
+    --accent:#bfa24a;
+    --white:#ffffff;
+    --glass: rgba(255,255,255,0.03);
+    --radius:14px;
+    --container:1180px;
+    --gap:20px;
+    --shadow: 0 20px 40px rgba(0,0,0,0.6);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+    background: radial-gradient(1200px 400px at 10% 10%, rgba(213,175,55,0.04), transparent 10%),
+                linear-gradient(180deg,#050505 0%, #0b0b0b 100%);
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  .container{
+    width:calc(100% - 40px);
+    max-width:var(--container);
+    margin:0 auto;
+    padding:36px 20px;
+  }
+
+  /* NAV */
+  .site-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--gap);
+    padding:12px 0;
+    position:sticky;
+    top:0;
+    z-index:60;
+    background:linear-gradient(180deg, rgba(11,11,11,0.75), rgba(11,11,11,0.35));
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.02);
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+  .logo-mark{
+    width:56px; height:56px; border-radius:999px; overflow:hidden; display:block;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border: 2px solid rgba(212,175,55,0.12);
+    transition: transform .9s cubic-bezier(.2,.9,.2,1);
+  }
+  .brand h1{font-size:18px;margin:0;font-weight:800;letter-spacing:.6px}
+  .nav-links{display:flex;gap:14px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+  .nav-links a:hover{color:var(--gold);background:rgba(212,175,55,0.04)}
+  .cta{
+    background: linear-gradient(90deg,var(--gold), #bfa24a);
+    color:#111;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none;
+    box-shadow: 0 10px 30px rgba(189,146,46,0.12)
+  }
+
+  /* HERO */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:28px;
+    align-items:center;
+    padding:64px 0 48px;
+  }
+  .hero-left{max-width:720px}
+  .kicker{display:inline-block;font-weight:800;color:var(--gold);background:rgba(212,175,55,0.04);padding:8px 12px;border-radius:999px;font-size:12px;margin-bottom:18px}
+  .hero h2{
+    font-size:42px;margin:0 0 16px;line-height:1.02;letter-spacing:-1px;font-weight:800;
+    transform: translateY(0);
+    opacity:1;
+  }
+  .lead{color:var(--muted);font-size:16px;max-width:700px;margin-bottom:22px}
+  .hero-ctas{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+  .hero-stats{display:flex;gap:12px;margin-top:12px}
+  .stat{background:var(--glass);padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+  .stat strong{display:block;font-size:18px;color:var(--gold);font-weight:800}
+  .stat span{font-size:12px;color:var(--muted)}
+
+  /* hero card */
+  .hero-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:16px;padding:20px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03);
+  }
+  .trades{width:100%;border-collapse:collapse;margin-top:10px;color:var(--muted)}
+  .trades th,.trades td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+  .trades th{color:var(--gold);font-weight:800;font-size:13px}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:800;font-size:13px;color:#111;background:var(--gold)}
+
+  /* SECTIONS */
+  .section{margin:56px 0;padding:28px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)}
+  .split{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{padding:14px;border-radius:12px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+  .card h4{margin:0 0 8px}
+  .card p{color:var(--muted);margin:0}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:10px}
+  .gallery figure{margin:0;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.9,.2,1)}
+  .fig-caption{position:absolute;left:12px;bottom:12px;background:linear-gradient(90deg,rgba(0,0,0,0.5),transparent);padding:8px 10px;border-radius:8px;font-weight:700;color:var(--gold)}
+
+  .gallery figure:hover img{transform:scale(1.03)}
+  .glow{box-shadow:0 0 28px rgba(212,175,55,0.18);border:1px solid rgba(212,175,55,0.18)}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.8);z-index:9999;padding:24px}
+  .lightbox img{max-width:100%;max-height:86vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+  .lightbox .close{position:absolute;top:22px;right:22px;background:var(--gold);color:#111;padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer}
+
+  /* telegram section */
+  .telegram-section {
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    gap:18px;
+    align-items:center;
+  }
+  .telegram-card{
+    padding:18px;
+    border-radius:12px;
+    background: linear-gradient(90deg, rgba(212,175,55,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(212,175,55,0.06);
+  }
+  .telegram-cta{
+    display:inline-block;
+    padding:14px 18px;
+    background:linear-gradient(90deg,var(--gold), #bfa24a);
+    color:#111;
+    font-weight:800;
+    border-radius:10px;
+    text-decoration:none;
+  }
+  .telegram-cta.secondary{background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.10)}
+
+  /* footer */
+  .site-footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+
+  /* animations */
+  .fade-up{opacity:0;transform:translateY(18px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.9,.2,1)}
+  .in-view{opacity:1;transform:translateY(0)}
+  .float {
+    animation: floaty 6s ease-in-out infinite;
+    transform-origin:center;
+  }
+  @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+  /* responsive */
+  @media (max-width:1024px){
+    .hero{grid-template-columns:1fr; text-align:center}
+    .split{grid-template-columns:1fr}
+    .hero-card{order:1}
+    .hero-left{order:2}
+    .telegram-section{grid-template-columns:1fr}
+  }
+  @media (max-width:680px){
+    .nav-links{display:none}
+    .brand h1{font-size:16px}
+    .logo-mark{width:46px;height:46px}
+    .hero h2{font-size:28px}
+    .gallery{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav container" role="banner" aria-label="Main navigation">
+  <a class="brand" href="#top" aria-label="Nexus.Trade home">
+    <!-- logo uses uploaded file path -->
+    <div class="logo-mark float" id="logoWrap">
+      <img src="NexusTrade.jpg" alt="Nexus.Trade logo" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+    <div>
+      <h1>Nexus.Trade</h1>
+      <div style="color:var(--muted);font-size:12px">Build traders. Win markets.</div>
+    </div>
+  </a>
+
+  <nav class="nav-links" role="navigation" aria-label="Main links">
+    <a href="#about">About</a>
+    <a href="#trades">Trades</a>
+    <a href="#education">Education</a>
+    <a href="#community">Community</a>
+	<a href="#pricing">Join Premium</a>
+    <a href="https://t.me/+4U7jDienEx1kYjFk"  rel="noopener" class="cta">Join The Education</a>
+  </nav>
+</header>
+
+<main id="top" class="container" role="main">
+  <section class="hero" aria-label="Intro">
+    <div class="hero-left">
+      <div class="kicker fade-up">INSIDE ACCESS — PRIVATE SIGNALS</div>
+      <h2 class="fade-up" style="transition-delay:.05s">Dominate the market with high-probability trades — weekly Forex & XAUUSD calls.</h2>
+      <p class="lead fade-up" style="transition-delay:.12s">Nexus.Trade is a trading collective for traders who want repeatable results. We publish weekly trade ideas, share XAUUSD strategies, teach trading psychology & fundamentals, and run a private Telegram trade room.</p>
+
+      <div class="hero-ctas fade-up" style="transition-delay:.2s">
+        <a class="cta" href="https://linktr.ee/Nexus.Trade" target="_blank">Get Weekly Alerts</a>
+        <a class="cta" href="#education" style="background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.12)">Read the Fundamentals Book</a>
+      </div>
+
+      <div class="hero-stats fade-up" style="transition-delay:.28s">
+        <div class="stat"><strong>Weekly Calls</strong><span>Forex & XAUUSD</span></div>
+        <div class="stat"><strong>Private Group</strong><span>Telegram</span></div>
+        <div class="stat"><strong>Education</strong><span>Psychology & Fundamentals</span></div>
+      </div>
+    </div>
+
+    <aside class="hero-card fade-up" style="transition-delay:.32s" aria-label="What's included">
+      <h3>What's included</h3>
+      <p style="color:var(--muted)">Weekly trade ideas, entry & exit levels, risk management guidance, and on-demand lessons from an experienced trading desk.</p>
+
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0">
+
+      <h4>Sample of Trades</h4>
+      <table class="trades" aria-label="Sample trades">
+        <thead>
+          <tr><th>Pair</th><th>Bias</th><th>Entry</th><th>Targets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>XAUUSD</td><td><span class="badge">Short</span></td><td>2108 - 2114</td><td>TP 2082 / SL 2132</td></tr>
+          <tr><td>EURUSD</td><td><span class="badge" style="background:#8fb3ff;color:#041230">Long</span></td><td>1.0765</td><td>TP 1.0850 / SL 1.0700</td></tr>
+          <tr><td>GBPUSD</td><td><span class="badge">Range</span></td><td>1.2650</td><td>TP 1.2760 / SL 1.2580</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:12px; display:flex; gap:8px;">
+        <a class="cta" href="#pricing" >Join Alerts</a>
+        <a class="cta" href="#community" style="background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.12)">See Community</a>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section fade-up" aria-labelledby="about-title">
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start">
+      <div>
+        <h3 id="about-title" style="color:var(--gold);margin-top:0">Who we are — Nexus.Trade</h3>
+        <p style="color:var(--muted)">We build disciplined, informed traders. By combining clear trade plans, practical risk management and consistent psychology training, Nexus.Trade helps members trade with structure, not emotion.</p>
+
+        <div class="cards" style="margin-top:18px">
+          <div class="card"><h4>Actionable Weekly Trades</h4><p>Forex & XAUUSD setups with entry, TP & SL.</p></div>
+          <div class="card"><h4>Trading Psychology</h4><p>Bias control, journaling and execution discipline.</p></div>
+          <div class="card"><h4>Fundamentals Book</h4><p>Macro drivers, news impact, and practical checklists.</p></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card" style="padding:16px;background:linear-gradient(90deg, rgba(212,175,55,0.04), transparent);border:1px solid rgba(212,175,55,0.08)">
+          <h4 style="margin:0 0 8px">Channels</h4>
+          <p style="color:var(--muted);margin:0 0 12px">Real-time alerts in Telegram. Visual recaps & highlights on Instagram.</p>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card"><h4>Why XAUUSD?</h4><p style="color:var(--muted);margin:0">High liquidity and macro sensitivity make Gold great for defined setups and momentum trades.</p></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- TRADES / GALLERY -->
+  <section id="trades" class="section fade-up" aria-labelledby="trades-title">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <h3 id="trades-title" style="color:var(--gold);margin:0">Trade Gallery & History</h3>
+      <div style="color:var(--muted);font-size:13px">Images from our posted setups (click to enlarge)</div>
+    </div>
+
+    <div class="gallery" style="margin-top:14px">
+      <!-- Trade chart -->
+      <figure data-caption="Trade example — AUD/USD" tabindex="0">
+        <img src="AUDUSDsample.jpg" alt="TradingView chart trade" />
+        <figcaption class="fig-caption">NexusTrade Sell — AUDUSD</figcaption>
+      </figure>
+
+      <!-- Trade chart -->
+      <figure data-caption="Trade example — NZD/CAD setups (TradingView screenshot)" tabindex="0">
+        <img src="USDCADsample.jpg" alt="TradingView chart trade" />
+        <figcaption class="fig-caption">NexusTrade Buy — USDCAD</figcaption>
+      </figure>
+
+      <!-- Trade chart -->
+      <figure data-caption="Trade example — USD/CAD" tabindex="0">
+        <img src="NZDCADsample.jpg" alt="TradingView chart tarde" />
+        <figcaption class="fig-caption">NexusTrade Sell — USDCAD</figcaption>
+      </figure>
+    </div>
+
+    <p style="color:var(--muted);margin-top:14px">Click any image to open a larger view. These are Trades from our Premium showing past trades, explanations and recaps.</p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section fade-up" aria-labelledby="edu-title">
+    <h3 id="edu-title" style="color:var(--gold);margin-top:0">Education — Psychology & Fundamentals</h3>
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+      <div>
+        <p style="color:var(--muted)">We teach traders the mental systems and fundamental frameworks that separate reactive losers from disciplined winners — journal systems, risk frameworks, and event-driven trade planning.</p>
+
+        <div class="cards" style="margin-top:12px">
+          <div class="card"><h4>Psychology</h4><p>Bias control, trade journaling, position sizing rules.</p></div>
+          <div class="card"><h4>Fundamentals</h4><p>Interest rate context, USD strength, macro drivers and gold correlations.</p></div>
+          <div class="card"><h4>Technical Rules</h4><p>Market structure, liquidity, simple confluence rules for entries.</p></div>
+        </div>
+      </div>
+      <aside>
+        <div class="card">
+          <h4>Fundamentals Book</h4>
+          <p style="color:var(--muted);margin:0">Download a concise guide we give to new members — covers macro drivers, trade planning, and practical examples.</p>
+          <div style="margin-top:12px"><a href="https://t.me/+4U7jDienEx1kYjFk"  rel="noopener" class="cta">Join To Download</a></div>
+		  
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="section fade-up" aria-labelledby="comm-title">
+    <h3 id="comm-title" style="color:var(--gold);margin-top:0">Community & Membership</h3>
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:18px;margin-top:12px">
+      <div>
+        <p style="color:var(--muted)">Our private Telegram group hosts live setups, community reviews and Q&A sessions. Members get the alerts, execution guidance and feedback to improve.</p>
+
+        <div style="margin-top:12px" class="cards">
+          <div class="card"><h4>Weekly Review Calls</h4><p style="color:var(--muted)">Live sessions to review trades and plan upcoming weeks.</p></div>
+          <div class="card"><h4>Trade Desk</h4><p style="color:var(--muted)">Priority trade alerts & entry sizing guidance for Premium members.</p></div>
+        </div>
+      </div>
+
+      <aside>
+        <div style="padding:16px;border-radius:12px;background:linear-gradient(90deg, rgba(212,175,55,0.04), transparent);border:1px solid rgba(212,175,55,0.08)">
+          <h4 style="margin:0 0 8px">Get Access</h4>
+          <p style="color:var(--muted);margin:0 0 12px">Join via Payment.</p>
+          <p style="margin:0 0 8px"><a class="cta" href="#pricing" >Connect</a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DEDICATED TELEGRAM SECTION -->
+  <section id="telegram" class="section fade-up" aria-labelledby="telegram-title">
+    <div class="telegram-section">
+      <div>
+        <h3 id="telegram-title" style="color:var(--gold);margin-top:0">Nexus.Trade Private Telegram</h3>
+        <p style="color:var(--muted)">This is our exclusive members-only Telegram group where community members discuss setups, post trade ideas, give multiple opinions on market structure, and provide real-time feedback. The group is moderated and focused on skill development — perfect for traders who want collaborative, actionable insights.</p>
+
+        <ul style="color:var(--muted);margin-top:12px">
+          <li>Real-time trade alerts & entry guidance</li>
+          <li>Multiple trader perspectives & execution notes</li>
+          <li>Weekly review threads and Q&A</li>
+          <li>Pinned trade plans and sizing suggestions</li>
+        </ul>
+
+        <div style="margin-top:16px">
+		  <a class="telegram-cta" href="#pricing"  rel="noopener">Enter Private Telegram Group</a>
+          <a class="telegram-cta secondary" target="_blank" rel="noopener" style="margin-left:10px">Join US</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="telegram-card">
+          <h4 style="margin:0 0 8px">How the group works</h4>
+          <p style="color:var(--muted);margin:0 0 12px">Members share ideas, post confirmations, and discuss risk management. Use the pinned resources for trade rules and the fundamentals book for macro context.</p>
+          <p style="margin:0 0 12px"><strong style="color:var(--gold)">Invite Link:</strong> <br /><a target="_blank" rel="noopener" style="color:var(--white);text-decoration:none">The Link will be in our Premium Groups</a></p>
+          <p style="color:var(--muted);font-size:13px;margin:0">Note: group is moderated—please follow the pinned rules after joining.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section fade-up" aria-labelledby="pricing-title">
+    <h3 id="pricing-title" style="color:var(--gold);margin-top:0">Membership Plans</h3>
+	<p id="pricing-title" style="color:var(--grey);margin-top:0">Telegram alerts (Forex & XAUUSD), trade entries, weekly calls and access to our Private Chat.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+      <div class="card" style="min-width:220px"><h4>Starter — $19/mo</h4><div style="margin-top:8px"><a class="cta" href="https://linktr.ee/Nexus.Trade" >Apply</a></div></div>
+      <div class="card" style="min-width:220px"><h4>Amateur — $49/3mo</h4><div style="margin-top:8px"><a class="cta" href="https://linktr.ee/Nexus.Trade" target="_blank">Apply</a></div></div>
+	  <div class="card" style="min-width:220px"><h4>Premium — $99/6mo</h4><div style="margin-top:8px"><a class="cta" href="https://linktr.ee/Nexus.Trade" >Apply</a></div></div>
+      <div class="card" style="min-width:220px"><h4>Elite — $199/year</h4><div style="margin-top:8px"><a class="cta" href="https://linktr.ee/Nexus.Trade" >Apply</a></div></div>
+    </div>
+  </section>
+
+  <!-- JOIN / CONTACT -->
+  <section id="join" class="section fade-up" aria-labelledby="join-title">
+    <h3 id="join-title" style="color:var(--gold);margin-top:0">Contact & Trial</h3>
+    <p style="color:var(--muted)">Questions or want a trial? Message us via the Telegram invite link or use the form below.</p>
+
+    <form id="contactForm" style="margin-top:12px;max-width:720px">
+  <label style="display:block;color:var(--muted);margin-bottom:8px">Name</label>
+  <input id="c_name" name="name" required style="width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--white)">
+
+  <label style="display:block;color:var(--muted);margin:12px 0 8px">Email</label>
+  <input id="c_email" name="email" type="email" required style="width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--white)">
+
+  <label style="display:block;color:var(--muted);margin:12px 0 8px">Message</label>
+  <textarea id="c_msg" name="message" rows="4" required style="width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--white)"></textarea>
+
+  <div style="display:flex;gap:12px;margin-top:12px">
+    <button class="cta" type="submit"onclick="sendmail()">Send Message</button>
+    <button type="button" onclick="document.getElementById('contactForm').reset()" style="background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.12);padding:10px 12px;border-radius:8px">Reset</button>
+  </div>
+  <p id="contactStatus" style="color:var(--muted);margin-top:10px"></p>
+</form>
+
+  </section>
+
+  <footer class="site-footer" role="contentinfo">
+    <div style="display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap">
+      <div>&copy; <span id="year"></span> Nexus.Trade</div>
+      <div style="color:var(--muted)">Join: <a href="https://t.me/+4U7jDienEx1kYjFk"  style="color:var(--gold);text-decoration:none">Nexus Education</a> • Telegram • Instagram</div>
+    </div>
+  </footer>
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image preview">
+  <button class="close" aria-label="Close" onclick="closeLightbox()">Close</button>
+  <img id="lightboxImg" src="" alt="Expanded preview">
+</div>
+
+<script>
+  // Set copyright year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal for elements with .fade-up
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Gallery lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+
+  document.querySelectorAll('.gallery figure').forEach(fig=>{
+    fig.addEventListener('click', ()=> openLightbox(fig));
+    fig.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' ') openLightbox(fig); });
+  });
+
+  function openLightbox(fig){
+    const img = fig.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = fig.getAttribute('data-caption') || img.alt || 'Image';
+    lightbox.style.display = 'flex';
+    lightbox.setAttribute('aria-hidden','false');
+  }
+  function closeLightbox(){
+    lightbox.style.display = 'none';
+    lightbox.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+  }
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+
+  // Floating logo animation on hover
+  const logoWrap = document.getElementById('logoWrap');
+  logoWrap.addEventListener('mouseenter', ()=> logoWrap.style.transform = 'translateY(-6px) rotate(-3deg)');
+  logoWrap.addEventListener('mouseleave', ()=> logoWrap.style.transform = '');
+
+  // Contact form (simulated)
+  emailjs.init("..."); // <-- Replace with your EmailJS public key
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const status = document.getElementById('contactStatus');
+  status.textContent = "Sending message…";
+
+  const templateParams = {
+    from_name: document.getElementById('c_name').value,
+    from_email: document.getElementById('c_email').value,
+    message: document.getElementById('c_msg').value
+  };
+
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+    .then(() => {
+      status.textContent = "Message sent successfully! We'll contact you via email.";
+      document.getElementById("contactForm").reset();
+    }, (error) => {
+      console.error(error);
+      status.textContent = "Error sending message. Please try again later.";
+    });
+});
+
+  // Keyboard close for lightbox
+  window.addEventListener('keydown', (e)=> { if(e.key==='Escape') closeLightbox(); });
+
+  // Emphasize second image with gold glow (example)
+  document.querySelectorAll('.gallery figure').forEach((fig, idx)=>{
+    if(idx===1){ fig.classList.add('glow'); }
+  });
+</script>
+
+</body>
+</html>
